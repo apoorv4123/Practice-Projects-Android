@@ -1,0 +1,54 @@
+Encountering setOnClickListener. 
+1.	First way: Declaration and initialisation in one line
+ 
+2.	Second way, declaration and initialization in different lines & Encountering problems with null:
+ 
+To solve above error:
+1.  Use Elvis Operator(?.), If btnAdd is null then just ignore. This is more preferred than 2.
+ 
+2. 
+
+In build.gradle (Module:app), on the very top there are 3 plugins. The Kotlin plugins & Kotlin android extensions plugins are automatically added when we create a Kotlin project. Kotlin android extensions are very special set of tools. This gives us a very big advantage over Java projects. 
+In Kotlin, we don’t need to use findViewById to find a view. Instead we can directly use the ids. 
+
+ (Alt + Enter) on btnAdd when it is showing error of Unresolved reference and import kotlinx library.  
+At line 8 in above figure: Kotlinx stands for Kotlin extensions, synthetic means that something does not exists when this app is actually going to run. When you use an id from xml file inside the Kotlin file, Kotlin will very smartly convert it into something as follows:  This is done with the help of synthetic package. Synthetic package contains the references of the views in the layout mentioned. The extension synthetic package only works for ids which we have set ourselves. It won’t work for inbuilt recycler view item layout like simple_list_item_1.
+If you (Click + Enter) on btnAdd above, you’ll go to the xml file code.
+
+Code to add 2 nos:
+ 
+ 
+
+Say, setListener is a function which takes only one interface Listener as an argument. And the interface Listener has only one function onListen() in its body. We can use the following concise codes. We don’t even need to write the name of function or the interface at end and code will work.
+ 
+The same is the case with setOnClickListener() function, OnClickListener interface and onCick() method of the interface.  
+
+Recycler View Example:
+ 
+ 
+ 
+When we write a task in the “New Task” Edit Text and click ADD button, the task is added in recycler view.
+Give the ids to the views. Say, etNewTodo to Edit Text, btnAdd to Button and rvTodos to Recycler View.
+We need to create todo model objects(types of items that is to be put in recycler view). So, we need to create a package for models and inside it we’ll create a file models.kt
+ 
+Kotlin developers realised that people have to write a lot of simple classes(containing instance variables and getters and setters) so, they introduced data classes.
+ 
+Now we need recycler view Adapter. So we create adapters package and into it put a Kotlin file TodoAdapter.
+
+
+ 		 
+
+list_item_todo.xml
+This is how each item in list is going to look like:
+ 
+ 
+
+ 
+TodoAdapter.kt 
+TodoAdapter class extends from RecyclerView.Adapter which takes a generic type ViewHolder for which we create class TodoViewHolder.
+TodoViewHolder class extends from RecyclerView.ViewHolder which has a constructor and thus must be initialised here. The constructor takes a View as parameter. The variable(View) coming to the constructor of TodoViewHolder will be the same thing that will be passed to constructor of RecyclerView.ViewHolder
+     
+Adapter class has 3 functions that we need to implement.
+MainActivity.kt 
+ 
+We’ll create an arrayList of Todo items.
