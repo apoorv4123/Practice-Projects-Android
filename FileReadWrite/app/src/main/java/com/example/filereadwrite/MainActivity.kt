@@ -13,12 +13,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btnWrite.setOnClickListener {
-            val dataDir = ContextCompat.getDataDir(this)
+            val dataDir = ContextCompat.getDataDir(this)//Direcory inside which I want to save my file
             val myFile = File(dataDir,"file.txt")
-            val fos = FileOutputStream(myFile,true)
-            fos.write(etInput.text.toString().toByteArray())
+
+            myFile.writeText(etInput.text.toString())// In kotlin we can choose not to make file output stream object
 //            OR
-            myFile.writeText(etInput.text.toString())
+//            val fos = FileOutputStream(myFile,true)
+//            fos.write(etInput.text.toString().toByteArray())
         }
 
         btnRead.setOnClickListener {
