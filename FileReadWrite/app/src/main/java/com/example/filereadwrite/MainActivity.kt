@@ -28,7 +28,9 @@ class MainActivity : AppCompatActivity() {
             tvDisplay.text = myFile.readText()
         }
 
-
+// Kotlin provides us with methods like readText() & writeText(). Using these methods, we can read& write without having to make objects of i/p or o/p stream
+// But this way has restrictions. Use this way only if you're sure that the file to be read & written won't be huge. And if you desire to have Append mode, 
+// make output stream object and then use it to write. writeText() does not has append mode
 
     }
 }
