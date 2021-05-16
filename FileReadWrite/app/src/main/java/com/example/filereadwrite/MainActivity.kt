@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
 
             myFile.writeText(etInput.text.toString())// In kotlin we can choose not to make file output stream object
 //            OR
-//            val fos = FileOutputStream(myFile,true)
+//            val fos = FileOutputStream(myFile,true)// writeText() does not has Append mode, so use output stream.
 //            fos.write(etInput.text.toString().toByteArray())
         }
 
