@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CameraX</string>
+    <string name="swap_lens">SWAP LENS</string>
+    <string name="save">Save</string>
+</resources>
