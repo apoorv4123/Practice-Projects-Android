@@ -131,6 +131,7 @@ class MainActivity : AppCompatActivity(), Executor {
         val imageCaptureConfig = ImageCaptureConfig.Builder().apply {
             setTargetAspectRatio(AspectRatio.RATIO_16_9)// optional
             setCaptureMode(ImageCapture.CaptureMode.MAX_QUALITY)
+            setLensFacing(lensFacing)
         }.build()
 
         imageCapture = ImageCapture(imageCaptureConfig)
