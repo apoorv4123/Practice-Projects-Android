@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Alarms</string>
+    <string name="scheduling_a_task">Scheduling a task</string>
+    <string name="schedule_a_task">SCHEDULE A TASK</string>
+</resources>
